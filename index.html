@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snake</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel" aria-labelledby="snake-title">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Classic arcade</p>
+            <h1 id="snake-title">Snake</h1>
+          </div>
+          <div class="header-actions">
+            <button id="rewind-button" class="button button--secondary" type="button">Rewind 4s</button>
+            <button id="pause-button" class="button button--secondary" type="button">Pause</button>
+            <button id="restart-button" class="button" type="button">Restart</button>
+          </div>
+        </header>
+
+        <div class="status-row" aria-live="polite">
+          <p>Score: <strong id="score-value">0</strong></p>
+          <label class="mode-picker" for="mode-select">
+            Mode
+            <select id="mode-select" class="select">
+              <option value="classic">Classic</option>
+              <option value="easy">Easy</option>
+            </select>
+          </label>
+          <p id="status-text">Use arrow keys or WASD to play.</p>
+        </div>
+
+        <div class="board-shell">
+          <div
+            id="game-board"
+            class="board"
+            role="grid"
+            aria-label="Snake game board"
+          ></div>
+        </div>
+
+        <footer class="instructions">
+          <p>Controls: Arrow keys or WASD</p>
+          <p>Easy mode lets the snake cross walls and appear on the other side.</p>
+          <p>Use Pause to stop and resume the game in any mode.</p>
+        </footer>
+      </section>
+    </main>
+
+    <script src="src/game-logic.js"></script>
+    <script src="src/game-ui.js"></script>
+  </body>
+</html>
